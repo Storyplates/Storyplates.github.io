@@ -1,0 +1,92 @@
+[
+  {
+    "id": "android-camera-mic-privacy",
+    "title": "See which apps used your camera or microphone",
+    "url": "https://support.google.com/android/answer/13532937"
+  },
+  {
+    "id": "android-permission-manager",
+    "title": "Review app permissions on Android",
+    "url": "https://support.google.com/android/answer/9431959"
+  },
+  {
+    "id": "android-find-device",
+    "title": "Find, secure, or erase a lost Android device",
+    "url": "https://support.google.com/android/answer/6160491"
+  },
+  {
+    "id": "android-backup-restore",
+    "title": "Back up or restore data on an Android device",
+    "url": "https://support.google.com/android/answer/2819582"
+  },
+  {
+    "id": "android-storage-cleanup",
+    "title": "Free up space on Android",
+    "url": "https://support.google.com/android/answer/7431795"
+  },
+  {
+    "id": "android-battery-settings",
+    "title": "Make your Android battery last longer",
+    "url": "https://support.google.com/android/answer/7664692"
+  },
+  {
+    "id": "android-safe-browsing",
+    "title": "Use Google Play Protect to help keep apps safe",
+    "url": "https://support.google.com/googleplay/answer/2812853"
+  },
+  {
+    "id": "android-screen-lock",
+    "title": "Set or change your Android screen lock",
+    "url": "https://support.google.com/android/answer/9079129"
+  },
+  {
+    "id": "android-do-not-disturb",
+    "title": "Use Do Not Disturb and Modes on Android",
+    "url": "https://support.google.com/android/answer/9069335"
+  },
+  {
+    "id": "android-system-update",
+    "title": "Check for Android system updates",
+    "url": "https://support.google.com/android/answer/15728187"
+  },
+  {
+    "id": "android-version-check",
+    "title": "Find Android version and security update status",
+    "url": "https://support.google.com/android/answer/7680439"
+  },
+  {
+    "id": "android-talkback",
+    "title": "Turn on TalkBack accessibility on Android",
+    "url": "https://support.google.com/accessibility/android/answer/6007100"
+  },
+  {
+    "id": "android-notification-controls",
+    "title": "Control notifications from an Android app",
+    "url": "https://support.google.com/android/answer/9079661"
+  },
+  {
+    "id": "android-notification-history",
+    "title": "Find dismissed notifications on Android",
+    "url": "https://support.google.com/android/answer/9079661"
+  },
+  {
+    "id": "android-share-wifi",
+    "title": "Share Wi-Fi access with a QR code on Android",
+    "url": "https://support.google.com/android/answer/9075847"
+  },
+  {
+    "id": "android-lockscreen-privacy",
+    "title": "Hide sensitive lock screen notifications",
+    "url": "https://support.google.com/android/answer/9079661"
+  },
+  {
+    "id": "android-play-protect-settings",
+    "title": "Scan apps with Google Play Protect",
+    "url": "https://support.google.com/googleplay/answer/2812853"
+  },
+  {
+    "id": "android-do-not-disturb-bedtime",
+    "title": "Schedule Bedtime mode on Android",
+    "url": "https://support.google.com/android/answer/9069335"
+  }
+]

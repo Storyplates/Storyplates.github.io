@@ -1,0 +1,62 @@
+name: Publish the daily Shorts Studio update
+
+on:
+  schedule:
+    # 7:47 AM Asia/Kolkata. GitHub can delay scheduled runs during high load.
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish this tested update to the configured Gumroad product
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phone-tips-shorts-studio-publish
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GUMROAD_ACCESS_TOKEN: ${{ secrets.GUMROAD_ACCESS_TOKEN }}
+      GUMROAD_PRODUCT_ID: ${{ vars.GUMROAD_PRODUCT_ID }}
+    steps:
+      - name: Check publication settings
+        if: github.event_name == 'schedule' || inputs.publish == true
+        run: |
+          test -n "$GEMINI_API_KEY" || { echo "GEMINI_API_KEY is missing"; exit 1; }
+          test -n "$GUMROAD_ACCESS_TOKEN" || { echo "GUMROAD_ACCESS_TOKEN is missing"; exit 1; }
+          test -n "$GUMROAD_PRODUCT_ID" || { echo "GUMROAD_PRODUCT_ID is missing"; exit 1; }
+      - name: Check out the public studio source
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install generator dependency
+        run: python -m pip install requests
+      - name: Create source-checked daily drop
+        if: github.event_name == 'schedule' || inputs.publish == true
+        run: python scripts/generate_daily_drop.py --topics topics.json --out data/daily_drop.json
+      - name: Build the Gumroad web app
+        run: python scripts/build_product.py
+      - name: Save a preview artifact for manual runs
+        if: github.event_name == 'workflow_dispatch' && inputs.publish != true
+        uses: actions/upload-artifact@v4
+        with:
+          name: phone-tips-shorts-studio-preview
+          path: Phone-Tips-Shorts-Studio.zip
+          retention-days: 7
+      - name: Install Gumroad CLI
+        if: github.event_name == 'schedule' || inputs.publish == true
+        run: curl -fsSL https://gumroad.com/install-cli.sh | bash
+      - name: Upload and publish the new product version
+        if: github.event_name == 'schedule' || inputs.publish == true
+        run: gumroad builds deploy ./dist --product "$GUMROAD_PRODUCT_ID" --promote

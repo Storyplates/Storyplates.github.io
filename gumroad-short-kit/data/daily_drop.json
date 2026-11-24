@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-25",
+  "topic_id": "android-camera-mic-privacy",
+  "topic_title": "See which apps used your camera or microphone",
+  "source_url": "https://support.google.com/android/answer/13532937",
+  "title": "Spot Camera or Mic Access on Android",
+  "hook": "Have you ever wondered which app is using your camera right now?",
+  "narration": "Have you ever wondered which app is using your camera or microphone? On Android 12 and newer, a green indicator appears near the top of your screen when an app uses either one. Swipe down and tap the indicator to see which app or service is active. You can tap again to manage permissions. Want a quick extra check? Swipe down twice and look for the camera or microphone controls in Quick Settings. The exact layout can vary by phone. Try it once, then tell me if you found the control.",
+  "scenes": [
+    "See the green privacy indicator",
+    "Swipe down from the top",
+    "Tap to check the active app",
+    "Try the Quick Settings controls"
+  ],
+  "description": "Learn how to check camera and microphone access on Android. Steps can vary by phone and version; see Google's official guide: https://support.google.com/android/answer/13532937",
+  "tags": ["Android privacy", "camera permissions", "microphone access", "Android tips"]
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Phone Tips Shorts Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Phone Tips Shorts Studio home">
+      <span class="brand-mark" aria-hidden="true">PT</span>
+      <span><strong>Phone Tips</strong><small>SHORTS STUDIO</small></span>
+    </a>
+    <span class="release-pill"><span class="dot"></span> Daily creator drop</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">A calmer way to make useful Shorts</p>
+        <h1>Turn a trusted source into a Short people can use.</h1>
+        <p class="hero-lede">Find a phone-tip idea, shape it into a clear script, and keep the official source beside it. Built for solo creators who want a repeatable workflow without recycled clips.</p>
+        <a class="button button-primary" href="#daily">Open today's drop <span aria-hidden="true">↓</span></a>
+        <span class="hero-note">Original prompts and source links. No copied footage.</span>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="phone"><div class="phone-speaker"></div><div class="phone-screen"><span class="phone-top">TIP OF THE DAY</span><span class="phone-icon">✦</span><span class="phone-line long"></span><span class="phone-line"></span><span class="phone-line short"></span><span class="phone-chip">SOURCE CHECKED</span></div></div>
+        <div class="floating-card card-source"><span class="mini-icon">↗</span><span><b>Official source</b><small>One tap away</small></span></div>
+        <div class="floating-card card-script"><span class="mini-icon">✎</span><span><b>Fresh script</b><small>Made for your voice</small></span></div>
+        <span class="spark spark-a">✦</span><span class="spark spark-b">✳</span>
+      </div>
+    </section>
+
+    <section class="daily-section" id="daily">
+      <div class="section-heading">
+        <div><p class="eyebrow">TODAY'S CREATOR DROP</p><h2 id="drop-title">Loading today's idea…</h2></div>
+        <a id="drop-source" class="source-link" href="#" target="_blank" rel="noreferrer">Read the official source ↗</a>
+      </div>
+      <div class="drop-layout">
+        <article class="drop-main">
+          <div class="hook-label"><span class="hook-dot"></span> THE OPENING HOOK</div>
+          <p id="drop-hook" class="hook-text"></p>
+          <div class="divider"></div>
+          <div class="content-label">VOICEOVER SCRIPT <button class="text-button" data-copy="narration">Copy script</button></div>
+          <p id="drop-narration" class="narration"></p>
+          <div class="content-label scenes-label">ON-SCREEN BEATS</div>
+          <ol id="drop-scenes" class="scene-list"></ol>
+        </article>
+        <aside class="drop-aside">
+          <div class="aside-box"><p class="content-label">VIDEO DETAILS</p><p id="drop-video-title" class="video-title"></p><p id="drop-description" class="description"></p></div>
+          <div class="aside-box"><p class="content-label">RELEVANT TAGS</p><div id="drop-tags" class="tag-list"></div><button class="text-button" data-copy="tags">Copy tags</button></div>
+          <p class="source-note">Check device menus against the source before recording. Android settings can vary by phone and version.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="workspace-section">
+      <div class="section-heading workspace-heading"><div><p class="eyebrow">YOUR IDEA DESK</p><h2>Pick a topic. Make it yours.</h2></div><label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search phone-tip ideas" aria-label="Search phone-tip ideas"></label></div>
+      <div id="topic-grid" class="topic-grid"></div>
+    </section>
+
+    <section class="builder-section" id="builder-section">
+      <div class="builder-intro"><p class="eyebrow">SCRIPT STARTER</p><h2>A useful Short starts with one clear action.</h2><p>Fill in the fields, then copy a ready-to-use prompt into your preferred AI tool. Always check the final steps against the linked source.</p></div>
+      <div class="builder-card">
+        <label>What should the viewer learn?<input id="idea" placeholder="Example: check which app is using the microphone"></label>
+        <label>Who is this for?<input id="audience" placeholder="Example: someone new to Android settings"></label>
+        <label>Official source link<input id="source-url" type="url" placeholder="https://support.google.com/android/..."></label>
+        <button class="button button-primary" id="make-prompt">Build my writing prompt</button>
+        <div id="prompt-output-wrap" class="prompt-output-wrap" hidden><div class="content-label">YOUR PROMPT <button class="text-button" data-copy="prompt">Copy prompt</button></div><pre id="prompt-output"></pre></div>
+      </div>
+    </section>
+
+    <section class="workflow-section">
+      <div class="workflow-header"><p class="eyebrow">THE 5-MINUTE QUALITY PASS</p><h2>Useful first. Upload second.</h2></div>
+      <div class="checklist">
+        <label><input type="checkbox"><span><b>Source</b><small>Does every phone-setting claim match the official page?</small></span></label>
+        <label><input type="checkbox"><span><b>Originality</b><small>Is this explanation in your own words and example?</small></span></label>
+        <label><input type="checkbox"><span><b>Clarity</b><small>Can a beginner follow one action without guessing?</small></span></label>
+        <label><input type="checkbox"><span><b>Rights</b><small>Do you own or have permission for every visual and sound?</small></span></label>
+      </div>
+    </section>
+  </main>
+  <footer><span>Phone Tips Shorts Studio</span><span>Make something useful. Credit your sources. Keep it yours.</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="topics.js"></script>
+  <script src="daily_drop.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

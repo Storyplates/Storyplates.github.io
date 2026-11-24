@@ -1,0 +1,1 @@
+window.DAILY_DROP = __DAILY_DROP_JSON__;
