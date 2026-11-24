@@ -13,7 +13,7 @@ The `dist/Phone-Tips-Shorts-Studio.zip` archive is generated from the app files.
 1. Create a Gumroad product in the dashboard as a **Web app** product. Choose your price and store details there.
 2. Upload the first build from the generated `dist/` folder in the Gumroad product editor, then make that version live.
 3. In the GitHub repository, add Actions secret `GUMROAD_ACCESS_TOKEN` with the Gumroad product-edit permission. Add secret `GEMINI_API_KEY` for the Google AI Studio key.
-4. Add repository variable `GUMROAD_PRODUCT_ID`. Use the identifier shown in the Gumroad product edit URL.
+4. Add repository variable `GUMROAD_PRODUCT_ID` using the identifier shown in the Gumroad product edit URL, then set `GUMROAD_PUBLISH_ENABLED` to `true` to turn on the scheduled release.
 5. Enable GitHub Actions. Scheduled runs make one original, source-checked draft from an official Android help page, build the offline app, then publish it as a new version of the existing Gumroad web app.
 
 The action does **not** create a fresh Gumroad listing each day. Gumroad does not provide that through its API. It updates the existing web app product with a new daily issue. A scheduled run fails closed if a key is missing or the source/review checks fail. A manual run defaults to a preview; set `publish` to true only when you want that run to become live.
