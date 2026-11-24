@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   build-and-publish:
+    if: vars.GUMROAD_PUBLISH_ENABLED == 'true' || (github.event_name == 'workflow_dispatch' && inputs.publish != true)
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
